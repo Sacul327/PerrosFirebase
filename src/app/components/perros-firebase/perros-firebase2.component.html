@@ -1,26 +1,29 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container-fluid bg-3">
-        <form class="form-horizontal row" method="POST">
+        <form class="form-horizontal row" (ngSubmit)="guardar()" #forma="ngForm">
             <div class="form-row col-md-6">
-                <label for="inputNombre">Id :</label> <input name="nombre" type="text" class="form-control" id="inputNombre" placeholder="nombre...">
+                <label for="inputNombre">Id :</label> <input [(ngModel)]="raza.productId" name="productId" type="text" class="form-control" id="inputNombre">
             </div>
             <div class="form-row col-md-6">
-                <label for="inputApellido">Raza :</label> <input name="apellido" type="text" class="form-control" id="inputApellido" placeholder="Apellido...">
+                <label for="inputApellido">Raza :</label> <input [(ngModel)]="raza.razaPerro" name="razaPerro" type="text" class="form-control" id="inputApellido" required>
             </div>
             <div class="form-row col-md-6">
-                <label for="inputDocumento">Descripcion :</label> <input type="text" name="documento" class="form-control" id="inputDocumento" placeholder="N° Documento...">
+                <label for="inputDocumento">Descripcion :</label> <input [(ngModel)]="raza.description" type="text" name="description" class="form-control" id="inputDocumento">
             </div>
             <div class="form-row col-md-6">
-                <label for="">Tamaño :</label> <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email...">
+                <label for="">Tamaño :</label> <input [(ngModel)]="raza.tamanio" type="text" name="tamanio" class="form-control" id="inputEmail">
             </div>
             <div class="form-row col-md-6">
-                <label for="">Color :</label> <input type="password" name="contrasena" class="form-control" id="inputContrasenia" placeholder="Contraseña...">
+                <label for="">Color :</label> <input [(ngModel)]="raza.color" type="text" name="color" class="form-control" id="inputContrasenia">
             </div>
             <div class="form-row col-md-6">
-                <label for="inputPrivilegio">Vida :</label> <input type="text" name="privilegio" class="form-control" id="inputPrivilegio" placeholder="Ingrese: admin O vendedor">
+                <label for="inputPrivilegio">Vida :</label> <input [(ngModel)]="raza.vida" type="text" name="vida" class="form-control" id="inputPrivilegio">
+            </div>
+            <div class="form-row col-md-6">
+                <label for="inputPrivilegio">imagenUrl :</label> <input [(ngModel)]="raza.imageUrl" type="text" name="imageUrl" class="form-control" id="inputPrivilegio">
             </div>
             <div class="separo">
-                <button id="adduser" class="btn btn-lg btn-info " type="submit">Agregar/Modificar</button>
+                <button [disabled]="!forma.valid" class="btn btn-lg btn-info " type="submit" (click)="mostrar()">Agregar/Modificar</button>
             </div>
 
             <div class="separo">

@@ -7,6 +7,7 @@ import { PerrosFirebaseComponent } from './components/perros-firebase/perros-fir
 import { PerrosFirebase2Component } from './components/perros-firebase/perros-firebase2.component';
 import { Routes } from '@angular/router';
 import { APP_ROUTING } from './firebase.routing';
+import { FirebaseService } from './service/firebase.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { APP_ROUTING } from './firebase.routing';
     APP_ROUTING,
     FormsModule  
   ],
-  providers: [],
+  providers: [
+    FirebaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

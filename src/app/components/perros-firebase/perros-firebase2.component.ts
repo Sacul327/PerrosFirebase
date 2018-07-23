@@ -12,13 +12,31 @@ import { razaInterfaz } from 'src/app/interfaz/perros.interface';
 
 export class PerrosFirebase2Component implements OnInit {
   
-  raza:razaInterfaz[]=[];
+  raza:razaInterfaz={
+    
+      productId:0,
+      razaPerro:"",
+      tamanio:"",          
+      description:"",
+      imageUrl:"la",
+      color: "",
+      vida: ""
+    }
   
+
+
   constructor() { }
 
   ngOnInit() {
   }
   
+  guardar(){
+  console.log("guardar");
+  }
+  
+  mostrar(){
+    console.log(this.raza);
+  }
 
 }
 
