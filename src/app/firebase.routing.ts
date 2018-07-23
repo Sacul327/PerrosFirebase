@@ -4,6 +4,7 @@ import { PerrosFirebase2Component } from './components/perros-firebase/perros-fi
 import { NgModule } from '@angular/core';
 
 
+
 const APP_ROUTES: Routes = [
   { path: 'perros', component: PerrosFirebaseComponent},
   { path: 'perros2:/id', component: PerrosFirebase2Component},
