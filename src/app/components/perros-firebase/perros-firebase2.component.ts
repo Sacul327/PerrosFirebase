@@ -11,7 +11,9 @@ import { razaInterfaz } from 'src/app/interfaz/perros.interface';
 
 
 export class PerrosFirebase2Component implements OnInit {
-
+  
+  raza:razaInterfaz[]=[];
+  
   constructor() { }
 
   ngOnInit() {
