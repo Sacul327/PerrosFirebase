@@ -8,6 +8,8 @@ import { PerrosFirebase2Component } from './components/perros-firebase/perros-fi
 import { Routes } from '@angular/router';
 import { APP_ROUTING } from './firebase.routing';
 import { FirebaseService } from './service/firebase.service';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FirebaseService } from './service/firebase.service';
   imports: [
     BrowserModule,
     APP_ROUTING,
-    FormsModule  
+    FormsModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [
     FirebaseService
