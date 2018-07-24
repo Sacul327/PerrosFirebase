@@ -20,7 +20,7 @@ export class PerrosFirebase2Component implements OnInit {
       razaPerro:"",
       tamanio:"",          
       description:"",
-      imageUrl:"la",
+      imageUrl:"",
       color: "",
       vida: ""
     }
@@ -33,13 +33,19 @@ export class PerrosFirebase2Component implements OnInit {
   }
   
   guardar(){
-    this._firebaseService.nuevaRaza(this.raza).subscribe(data=>{});
-  console.log("guardar");
+    this._firebaseService.nuevaRaza(this.raza).subscribe(data=>{
+      alert("Guardado con exito")},
+      error => {alert("Error al guardar el dato" + error)}
+    );
   }
   
   mostrar(){
     console.log(this.raza);
   }
 
+  filterName:string;
+  clear(){
+    this.filterName = '';
+  }
 }
 

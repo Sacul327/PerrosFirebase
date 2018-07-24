@@ -1,6 +1,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container-fluid bg-3">
-        <form class="form-horizontal row" (ngSubmit)="guardar()" #forma="ngForm">
+        <form class="form-horizontal row" (ngSubmit)="guardar()" #forma="ngForm" onsubmit="this.reset()">
+            <!-- onsubmit="this.reset()" -->
             <div class="form-row col-md-6">
                 <label for="inputNombre">Id :</label> <input [(ngModel)]="raza.productId" name="productId" type="text" class="form-control" id="inputNombre">
             </div>
@@ -23,7 +24,7 @@
                 <label for="inputPrivilegio">imagenUrl :</label> <input [(ngModel)]="raza.imageUrl" type="text" name="imageUrl" class="form-control" id="inputPrivilegio">
             </div>
             <div class="separo">
-                <button [disabled]="!forma.valid" class="btn btn-lg btn-info " type="submit" (click)="mostrar()">Agregar/Modificar</button>
+                <button [disabled]="!forma.valid" class="btn btn-lg btn-info " (click)="mostrar()" type="submit">Agregar/Modificar</button>
             </div>
 
             <div class="separo">
