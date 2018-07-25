@@ -24,11 +24,13 @@
                 <label for="inputPrivilegio">imagenUrl :</label> <input [(ngModel)]="raza.imageUrl" type="text" name="imageUrl" class="form-control" id="inputPrivilegio">
             </div>
             <div class="separo">
-                <button [disabled]="!forma.valid" class="btn btn-lg btn-info " (click)="mostrar()" type="submit">Agregar/Modificar</button>
+                <button [disabled]="!forma.valid" class="btn btn-lg btn-info " (click)="guardar('POST')" type="submit">Agregar</button>
+                <button id="adduser" class="btn btn-lg btn-info " (click)="guardar('PUT')" type="submit" routerLink="/perros" routerLinkActive="active">Actualizar</button>
             </div>
 
-            <div class="separo">
+            <div class="separo row">
                 <button id="adduser" class="btn btn-lg btn-info " type="submit" routerLink="/perros" routerLinkActive="active">Volver a la tabla</button>
+
             </div>
         </form>
 

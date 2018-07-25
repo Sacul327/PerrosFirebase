@@ -14,6 +14,8 @@ import { map } from 'rxjs/operators';
 export class FirebaseService{
 
   urlFirebase:string="https://blogperros-572eb.firebaseio.com/raza.json";
+  urlfirebase2:string="https://blogperros-572eb.firebaseio.com/raza"
+  keyUrl:string="/-LICdjwoKxdGcO9Y5heX";
 
   constructor(private http: HttpClient ) {   }
  
@@ -28,6 +30,26 @@ export class FirebaseService{
     }));
   }
 
+  actNuevaRaza ( raza: razaInterfaz) {
+    let body = JSON.stringify( raza);
+    let url = this.urlFirebase.substring(0,this.urlFirebase.length-5);
+    let headers = new HttpHeaders ({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put( url+this.keyUrl+".json", body, {headers} ).pipe(map( res => {
+      console.log(res);
+      return res;
+    }));
+  }
+  getNuevaRaza () {
+    let headers = new HttpHeaders ({
+      'Content-Type': 'application/json'
+    });
+    return this.http.get( this.urlFirebase, {headers} ).pipe(map( res => {
+      /* console.log(res); */
+      return res;
+    }));
+  }
 
 }
 /* export const environment = {
