@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 
 const APP_ROUTES: Routes = [
   { path: 'perros', component: PerrosFirebaseComponent},
-  { path: 'perros2/:id', component: PerrosFirebase2Component},
+  { path: 'perros2/:key', component: PerrosFirebase2Component},
   { path: 'perros2', component: PerrosFirebase2Component},
   { path: '**', pathMatch: 'full', redirectTo: 'perros' }
 ];

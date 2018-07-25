@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { razaInterfaz } from 'src/app/interfaz/perros.interface';
 import { FirebaseService } from '../../service/firebase.service';
 import { post } from 'selenium-webdriver/http';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { post } from 'selenium-webdriver/http';
 
 
 export class PerrosFirebase2Component implements OnInit {
-  
+  key:string='';
   raza:razaInterfaz={
     
       productId:0,
@@ -28,7 +29,11 @@ export class PerrosFirebase2Component implements OnInit {
   
 
 
-  constructor(private _firebaseService:FirebaseService) { }
+    constructor(private _firebaseService:FirebaseService, private activarRuta: ActivatedRoute) {
+      this.activarRuta.params.subscribe( parametros => {
+        this.key = parametros['key'];
+      });
+    }
 
   ngOnInit() {
   }
@@ -40,7 +45,7 @@ export class PerrosFirebase2Component implements OnInit {
       error => {alert("Error al guardar el dato" + error)}
     );}
     if(e==='PUT'){
-      this._firebaseService.actNuevaRaza(this.raza).subscribe(data=>{
+      this._firebaseService.actNuevaRaza(this.raza,this.key).subscribe(data=>{
         alert("Guardado con exito")},
         error => {alert("Error al guardar el dato" + error)}
       );}

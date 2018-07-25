@@ -30,13 +30,13 @@ export class FirebaseService{
     }));
   }
 
-  actNuevaRaza ( raza: razaInterfaz) {
+  actNuevaRaza ( raza: razaInterfaz, key) {
     let body = JSON.stringify( raza);
     let url = this.urlFirebase.substring(0,this.urlFirebase.length-5);
     let headers = new HttpHeaders ({
       'Content-Type': 'application/json'
     });
-    return this.http.put( url+this.keyUrl+".json", body, {headers} ).pipe(map( res => {
+    return this.http.put( url+"/"+ key +".json", body, {headers} ).pipe(map( res => {
       console.log(res);
       return res;
     }));
