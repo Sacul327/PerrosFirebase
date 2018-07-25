@@ -27,6 +27,7 @@ export class PerrosFirebaseComponent implements OnInit {
   constructor(private _firebaseService:FirebaseService) { }
 
   ngOnInit() {
+    this.getAll();
   }
 
   mostrar2(){

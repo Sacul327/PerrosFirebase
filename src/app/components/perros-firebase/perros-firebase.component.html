@@ -1,25 +1,25 @@
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Raza</th>
+                <th scope="col">Tamaño</th>
+                <th scope="col">Vida</th>
+                <th scope="col">Actualizar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let iterador of raza">
+            <tr>
+                <th scope="row">{{iterador.razaPerro}}</th>
+                <td>{{iterador.tamanio}}</td>
+                <td>{{iterador.vida}}</td>
+                <td><a [routerLink]="['/perros2', iterador.key]" routerLinkActive="active">Actualizar</a></td>
 
-    </tbody>
-</table>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
 <div class="separo">
     <button id="adduser" class="btn btn-lg btn-info " type="submit" routerLink="/perros2" routerLinkActive="active">Ir al formulario</button>
-    <button id="adduser" class="btn btn-lg btn-info " type="submit" (click)="getAll()">activar mostrar
-
-    </button>
 </div>
