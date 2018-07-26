@@ -15,7 +15,7 @@
                 <td>{{iterador.tamanio}}</td>
                 <td>{{iterador.vida}}</td>
                 <td><a [routerLink]="['/perros2', iterador.key]" routerLinkActive="active">Actualizar</a></td>
-                <td><a name="" id="" class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link" href="#" role="button" routerLinkActive="active" (click)="borrarRaza(iterador,iterador.key)">Borrar</a></td>
+                <td><button name="" id="" class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link" href="#" role="button" routerLinkActive="active" (click)='borrarRaza(iterador,iterador.key)'>Borrar</button></td>
             </tr>
 
         </tbody>
