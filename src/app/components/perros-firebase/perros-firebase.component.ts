@@ -54,7 +54,7 @@ export class PerrosFirebaseComponent implements OnInit {
   }
 
 
-  mostrar4(){
+  /* mostrar4(){
     this._firebaseService.getNuevaRaza().subscribe(data=>{
       const dataStr = JSON.stringify(data);
       JSON.parse(dataStr, (key, value) => {
@@ -76,7 +76,7 @@ export class PerrosFirebaseComponent implements OnInit {
     },
       error => {alert("Error al guardar el dato" + error)}
     );
-  }
+  } */
 
 mostrar5(){
     this._firebaseService.getNuevaRaza().subscribe(data=>{
@@ -107,5 +107,18 @@ mostrar5(){
       console.log(this.raza);   
     });
   }
+
+  borrarRaza(perro:razaInterfaz,key:string){
+    console.log(key+"SOY LA KEY WACHO");
+    console.log(perro+"SOY EL ARRAY WACHOOOO");
+    this._firebaseService.deleteNuevaRaza(perro,key).subscribe(data=>{
+      alert("Guardado con exito")
+    console.log(data);
+    },
+      error => {alert("Error al guardar el dato" + error)}
+    );
+  }
+
+
   
 }

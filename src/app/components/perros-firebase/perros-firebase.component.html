@@ -6,6 +6,7 @@
                 <th scope="col">Tamaño</th>
                 <th scope="col">Vida</th>
                 <th scope="col">Actualizar</th>
+                <th scope="col">Borrar</th>
             </tr>
         </thead>
         <tbody *ngFor="let iterador of raza">
@@ -14,7 +15,7 @@
                 <td>{{iterador.tamanio}}</td>
                 <td>{{iterador.vida}}</td>
                 <td><a [routerLink]="['/perros2', iterador.key]" routerLinkActive="active">Actualizar</a></td>
-
+                <td><a name="" id="" class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link" href="#" role="button" routerLinkActive="active" (click)="borrarRaza(iterador,iterador.key)">Borrar</a></td>
             </tr>
 
         </tbody>

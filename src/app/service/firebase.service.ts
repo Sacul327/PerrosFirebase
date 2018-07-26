@@ -41,6 +41,19 @@ export class FirebaseService{
       return res;
     }));
   }
+
+  deleteNuevaRaza ( raza: razaInterfaz, key) {
+    let body = JSON.stringify( raza);
+    let url = this.urlFirebase.substring(0,this.urlFirebase.length-5);
+    let headers = new HttpHeaders ({
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete( url+"/"+ key +".json", {headers} ).pipe(map( res => {
+      console.log(res);
+      return res;
+    }));
+  }
+
   getNuevaRaza () {
     let headers = new HttpHeaders ({
       'Content-Type': 'application/json'
